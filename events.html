@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACM SIGCHI Events</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="domains.html">Domains</a></li>
+            <li><a href="events.html">Events</a></li>
+        </ul>
+    </nav>
+
+    <div class="events-container">
+        <h1>Our Events</h1>
+        <p class="subtitle">A glimpse of all the activities we have conducted</p>
+
+        <div class="events-grid">
+
+            <!-- Event Card 1 -->
+            <div class="event-card" data-event="event1">
+                <img src="images/event1.jpg" alt="Event1">
+                <h3>Pythoneers: Code. Create. Conquer</h3>
+                <p class="event-date">August 31, 2024</p>
+            </div>
+
+            <!-- Event Card 2 -->
+            <div class="event-card" data-event="event2">
+                <img src="images/event2.jpg" alt="Event 2">
+                <h3>Hour of Code</h3>
+                <p class="event-date">Dec 9, 2024</p>
+            </div>
+
+            <!-- Event Card 3 -->
+            <div class="event-card" data-event="event3">
+                <img src="images/event3.jpg" alt="Event 3">
+                <h3>SYNERGY</h3>
+                <p class="event-date">March 25, 2025</p>
+            </div>
+
+            <!-- Event Card 4-->
+             <div class="event-card" data-event="event4">
+                <img src="images/event4.jpg" alt="Event 4">
+                <h3>Workshop on Full Stack Development</h3>
+                <p class="event-date">April 25, 2025</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modals -->
+
+    <!-- Event 1 Modal -->
+    <div id="event1" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Pythoneers: Code. Create. Conquer</h2>
+            <p><strong>Date:</strong> August 31, 2024</p><br>
+            <p><strong>Location:</strong> Online</p><br>
+            <p><strong>Description:</strong> Coding, creating and learning python all the way from basics to
+                intermediate level.
+                <br>
+                Practice Quiz to see how well everyone performed.
+            </p>
+        </div>
+    </div>
+
+    <!-- Event 2 Modal -->
+    <div id="event2" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Hour Of Code</h2>
+            <p><strong>Date:</strong> Dec 9, 2024</p>
+            <p><strong>Location:</strong> School in Chengalpattu</p>
+            <p><strong>Description:</strong> Members of ACM volunteered to teach under priviledged basics of computer learning.</p>
+            <img src="images/event2-2.jpg" alt="pic">
+        </div>
+    </div>
+
+    <!-- Event 3 Modal -->
+    <div id="event3" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>SYNERGY</h2>
+            <p><strong>Date:</strong> March 25, 2025</p>
+            <p><strong>Location:</strong> SRM Campus</p>
+            <p><strong>Description:</strong> Had multiple tech and non tech games that students participated in. Included prize money.</p>
+            <img src="images/event3-2.jpg" alt="pic">
+        </div>
+    </div>
+
+    <!-- Event 4 Modal -->
+    <div id="event4" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Workshop on Full Stack Development</h2>
+            <p><strong>Date:</strong> April 25, 2025</p>
+            <p><strong>Location:</strong> Tech Park, SRM University</p>
+            <p><strong>Description:</strong> Invited Mr. Abin Paul and his team to explain students about angular, firebase and real world dev over-flows..</p>
+            <img src="images/event4-2.jpg" alt="pic">
+        </div>
+    </div>
+
+    <!-- JS for Modal Functionality -->
+    <script>
+        const eventCards = document.querySelectorAll('.event-card');
+        const modals = document.querySelectorAll('.modal');
+        const closeButtons = document.querySelectorAll('.close');
+
+        eventCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const eventId = card.getAttribute('data-event');
+                document.getElementById(eventId).style.display = 'block';
+            });
+        });
+
+        closeButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.parentElement.parentElement.style.display = 'none';
+            });
+        });
+
+        window.addEventListener('click', (e) => {
+            modals.forEach(modal => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
